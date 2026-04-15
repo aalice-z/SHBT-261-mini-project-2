@@ -56,7 +56,7 @@ Thumbs.db
 
 # Training Logs (local tracking)
 training_log*.txt
-training_state.json
+scripts/training_state.json
 
 # Temporary Files
 *.tmp

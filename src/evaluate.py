@@ -7,6 +7,12 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
+import sys
+from os.path import dirname, abspath
+
+# Add src directory to path for imports
+sys.path.insert(0, dirname(abspath(__file__)))
+
 from voc2007 import get_data_loaders
 from models import get_model
 from metrics import MetricTracker

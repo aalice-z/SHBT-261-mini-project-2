@@ -62,7 +62,8 @@ echo "Loss: $LOSS"
 echo "Optimizer: $OPTIMIZER"
 echo "============================================================"
 
-python train.py \
+cd "$(dirname "$0")/.."
+python src/train.py \
     --model "$MODEL" \
     --epochs "$EPOCHS" \
     --batch-size "$BATCH_SIZE" \

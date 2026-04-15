@@ -13,6 +13,10 @@ from torchvision import transforms
 import numpy as np
 from pathlib import Path
 import sys
+from os.path import dirname, abspath
+
+# Add src directory to path for imports
+sys.path.insert(0, dirname(abspath(__file__)))
 
 # Import custom modules
 from models import get_model
