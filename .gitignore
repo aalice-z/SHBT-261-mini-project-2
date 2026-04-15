@@ -54,6 +54,9 @@ Thumbs.db
 .ipynb_checkpoints
 *.ipynb
 
+# PDF Files
+*.pdf
+
 # Training Logs (local tracking)
 training_log*.txt
 scripts/training_state.json
