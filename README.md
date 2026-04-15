@@ -4,7 +4,6 @@ A complete deep learning pipeline for semantic segmentation on the PASCAL Visual
 
 ## Quick Links
 
-- **Main Report**: [docs/FINAL_REPORT.md](docs/FINAL_REPORT.md) - Complete project analysis
 - **Quick Reference**: [docs/SUBMISSION_QUICK_REFERENCE.md](docs/SUBMISSION_QUICK_REFERENCE.md) - Key results and file locations
 - **Project Details**: [docs/README.md](docs/README.md) - Full documentation
 
