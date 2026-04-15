@@ -91,5 +91,3 @@ python src/evaluate.py --model-path checkpoints/best_model.pt
 - ✅ Model checkpointing and scheduler support
 - ✅ GPU/MPS device support
 - ✅ Complete CLI interface
-
-See [docs/FINAL_REPORT.md](docs/FINAL_REPORT.md) for complete details and analysis.
