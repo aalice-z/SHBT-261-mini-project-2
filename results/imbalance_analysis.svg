@@ -1,0 +1,103 @@
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; }
+      .subtitle { font-size: 14px; font-weight: bold; }
+      .label { font-size: 12px; }
+      .small { font-size: 10px; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="35" class="title" text-anchor="middle">PASCAL VOC 2007 Dataset Imbalance Analysis</text>
+  
+  <!-- Left side: Class Distribution Bar Chart -->
+  <rect x="40" y="60" width="500" height="750" fill="#f9f9f9" stroke="#333" stroke-width="2"/>
+  <text x="290" y="90" class="subtitle" text-anchor="middle">Class Distribution (Pixel Count)</text>
+  
+  <!-- Background class (9.8M pixels - 74%)-->
+  <rect x="70" y="110" width="440" height="30" fill="#2ecc71" stroke="#333" stroke-width="1"/>
+  <text x="75" y="130" class="label" font-weight="bold">Background: 9,810,120 (74.0%)</text>
+  
+  <!-- Person class (790K pixels - 5.9%) -->
+  <rect x="70" y="150" width="41.8" height="30" fill="#3498db" stroke="#333" stroke-width="1"/>
+  <text x="75" y="170" class="label">Person: 790,209 (5.9%)</text>
+  
+  <!-- Medium classes -->
+  <rect x="70" y="190" width="20" height="20" fill="#f39c12" stroke="#333" stroke-width="1"/>
+  <text x="95" y="205" class="small">Bus: 228,680 (1.7%)</text>
+  
+  <rect x="70" y="220" width="18.8" height="20" fill="#e74c3c" stroke="#333" stroke-width="1"/>
+  <text x="95" y="235" class="small">Train: 270,490 (2.0%)</text>
+  
+  <rect x="70" y="250" width="14.6" height="20" fill="#9b59b6" stroke="#333" stroke-width="1"/>
+  <text x="95" y="265" class="small">Horse: 133,269 (1.0%)</text>
+  
+  <!-- Small classes (0.5% - 1%) -->
+  <text x="75" y="310" class="subtitle">Small Object Classes (&lt;1% each):</text>
+  <rect x="70" y="320" width="440" height="150" fill="#ecf0f1" stroke="#333" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <text x="90" y="350" class="small">Aeroplane: 121K | Bicycle: 28.7K | Bird: 126K | Boat: 59.9K</text>
+  <text x="90" y="370" class="small">Bottle: 66.3K | Car: 98.8K | Cat: 307K | Chair: 118K</text>
+  <text x="90" y="390" class="small">Cow: 116K | Diningtable: 226K | Dog: 107K | Motorbike: 205K</text>
+  <text x="90" y="410" class="small">Pottedplant: 63.7K | Sheep: 222K | Sofa: 119K | Tvmonitor: 68.3K</text>
+  <text x="75" y="445" class="small" font-weight="bold">Total: 19 classes with ~2,650,646 pixels (19.9% of dataset)</text>
+  
+  <!-- Problem statement -->
+  <rect x="70" y="500" width="440" height="290" fill="#ffe6e6" stroke="#cc0000" stroke-width="2"/>
+  <text x="290" y="525" class="subtitle" text-anchor="middle" fill="#cc0000">Dataset Imbalance Problem</text>
+  
+  <text x="90" y="555" class="label" font-weight="bold">Class Distribution Ratio:</text>
+  <text x="90" y="580" class="small">Background : Others = 9.8M : 2.65M = 3.69 : 1</text>
+  <text x="90" y="605" class="small">Background : Bicycle = 9.8M : 28.7K = 341 : 1</text>
+  
+  <text x="90" y="635" class="label" font-weight="bold">Impact on Model Training:</text>
+  <text x="90" y="660" class="small">• Loss is dominated by background class gradient signals</text>
+  <text x="90" y="680" class="small">• Small object classes have insufficient training signal</text>
+  <text x="90" y="700" class="small">• Model learns background well, fails on minority classes</text>
+  <text x="90" y="720" class="small">• 17 of 21 classes achieve 0% IoU (not learned)</text>
+  <text x="90" y="740" class="small">• mIoU drops to 4.16% (average of 21 per-class IoU values)</text>
+  
+  <!-- Right side: Solutions -->
+  <rect x="570" y="60" width="580" height="750" fill="#f0f8ff" stroke="#333" stroke-width="2"/>
+  <text x="860" y="90" class="subtitle" text-anchor="middle">Recommended Solutions</text>
+  
+  <!-- Short-term -->
+  <rect x="590" y="110" width="540" height="140" fill="#fff9e6" stroke="#f39c12" stroke-width="2"/>
+  <text x="610" y="135" class="subtitle">❶ Short-term Improvements</text>
+  <text x="610" y="160" class="small">• Class-Weighted Loss: inverse_frequency_weight = max(counts) / counts</text>
+  <text x="610" y="180" class="small">• Focal Loss (γ=2): Penalizes easy background predictions</text>
+  <text x="610" y="200" class="small">• Lower Learning Rate: Finer convergence (1e-4 instead of 1e-3)</text>
+  <text x="610" y="220" class="small">• Extended Training: 100+ epochs instead of 50</text>
+  <text x="610" y="235" class="small" fill="#f39c12" font-weight="bold">Expected mIoU: 6-10% (+2-5% improvement)</text>
+  
+  <!-- Medium-term -->
+  <rect x="590" y="270" width="540" height="140" fill="#ffe6f0" stroke="#e74c3c" stroke-width="2"/>
+  <text x="610" y="295" class="subtitle">❷ Medium-term Improvements</text>
+  <text x="610" y="320" class="small">• DeepLabV3+ Architecture: Atrous conv + ASPP module + spatial decoder</text>
+  <text x="610" y="340" class="small">• Advanced Augmentation: GridMask, Mixup/CutMix, Random Erasing</text>
+  <text x="610" y="360" class="small">• Hard Negative Mining: Focus on misclassified pixels during training</text>
+  <text x="610" y="380" class="small">• Boundary-aware Loss: Extra weight on object edges & small objects</text>
+  <text x="610" y="395" class="small" fill="#e74c3c" font-weight="bold">Expected mIoU: 15-25% (3-6x improvement)</text>
+  
+  <!-- Long-term -->
+  <rect x="590" y="430" width="540" height="120" fill="#e6ffe6" stroke="#27ae60" stroke-width="2"/>
+  <text x="610" y="455" class="subtitle">❸ Advanced Improvements</text>
+  <text x="610" y="480" class="small">• Ensemble Methods: Combine U-Net + DeepLabV3+ + PSPNet predictions</text>
+  <text x="610" y="500" class="small">• Semi-supervised Learning: Use pseudo-labels on unlabeled PASCAL VOC data</text>
+  <text x="610" y="520" class="small">• Multi-scale Training: Train on multiple resolutions (384, 512, 768)</text>
+  <text x="610" y="535" class="small" fill="#27ae60" font-weight="bold">Expected mIoU: 20-30% (5-7x improvement)</text>
+  
+  <!-- Current vs Expected -->
+  <rect x="590" y="570" width="540" height="180" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <text x="860" y="595" class="subtitle" text-anchor="middle">Performance Trajectory</text>
+  
+  <text x="610" y="625" class="small" font-weight="bold">Current:       mIoU = 4.16% (U-Net + CE+Dice Loss, 50 epochs)</text>
+  <text x="610" y="645" class="small">With Focal:    mIoU ≈ 8.5% (+2-5% improvement, quick fix)</text>
+  <text x="610" y="665" class="small">With DeepLabV3+: mIoU ≈ 18% (5x improvement, medium effort)</text>
+  <text x="610" y="685" class="small">With Ensemble: mIoU ≈ 22% (5.3x improvement, high effort)</text>
+  <text x="610" y="705" class="small" fill="#999">SOTA Baseline:  mIoU ≈ 76% (full optimization + large data)</text>
+  
+  <text x="610" y="725" class="label" fill="#333" font-weight="bold">Next Step: Implement class-weighted loss to gain +2-5% mIoU immediately</text>
+  <text x="610" y="740" class="label" fill="#333" font-weight="bold">Timeline: ~1-2 hours for implementation and testing</text>
+</svg>

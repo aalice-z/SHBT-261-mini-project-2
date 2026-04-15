@@ -1,0 +1,122 @@
+============================================================
+PASCAL VOC 2007 Semantic Segmentation Dataset
+============================================================
+Number of classes: 21
+Classes: ['background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
+
+============================================================
+📊 PASCAL VOC 2007 Class Mapping:
+============================================================
+ 0 → background
+ 1 → aeroplane
+ 2 → bicycle
+ 3 → bird
+ 4 → boat
+ 5 → bottle
+ 6 → bus
+ 7 → car
+ 8 → cat
+ 9 → chair
+10 → cow
+11 → diningtable
+12 → dog
+13 → horse
+14 → motorbike
+15 → person
+16 → pottedplant
+17 → sheep
+18 → sofa
+19 → train
+20 → tvmonitor
+
+============================================================
+📂 Loading Dataset...
+============================================================
+✅ Train samples: 209
+✅ Validation samples: 213
+Using device: mps
+
+📦 Loading model...
+✓ Model loaded from checkpoints/best_model.pt
+
+📊 Loading dataset...
+✓ Validation set: 107 batches
+
+🔍 Evaluating on validation set...
+============================================================
+PASCAL VOC 2007 Semantic Segmentation Dataset
+============================================================
+Number of classes: 21
+Classes: ['background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
+
+============================================================
+📊 PASCAL VOC 2007 Class Mapping:
+============================================================
+ 0 → background
+ 1 → aeroplane
+ 2 → bicycle
+ 3 → bird
+ 4 → boat
+ 5 → bottle
+ 6 → bus
+ 7 → car
+ 8 → cat
+ 9 → chair
+10 → cow
+11 → diningtable
+12 → dog
+13 → horse
+14 → motorbike
+15 → person
+16 → pottedplant
+17 → sheep
+18 → sofa
+19 → train
+20 → tvmonitor
+
+============================================================
+📂 Loading Dataset...
+============================================================
+✅ Train samples: 209
+✅ Validation samples: 213
+============================================================
+PASCAL VOC 2007 Semantic Segmentation Dataset
+============================================================
+Number of classes: 21
+Classes: ['background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
+
+============================================================
+📊 PASCAL VOC 2007 Class Mapping:
+============================================================
+ 0 → background
+ 1 → aeroplane
+ 2 → bicycle
+ 3 → bird
+ 4 → boat
+ 5 → bottle
+ 6 → bus
+ 7 → car
+ 8 → cat
+ 9 → chair
+10 → cow
+11 → diningtable
+12 → dog
+13 → horse
+14 → motorbike
+15 → person
+16 → pottedplant
+17 → sheep
+18 → sofa
+19 → train
+20 → tvmonitor
+
+============================================================
+📂 Loading Dataset...
+============================================================
+✅ Train samples: 209
+✅ Validation samples: 213
+  Batch 10/107
+  Batch 20/107
+  Batch 30/107
+  Batch 40/107
+  Batch 50/107

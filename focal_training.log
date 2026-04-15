@@ -1,0 +1,11 @@
+usage: train.py [-h] [--model {unet,deeplab}] [--pretrained]
+                [--dataset-root DATASET_ROOT] [--batch-size BATCH_SIZE]
+                [--num-workers NUM_WORKERS] [--image-size IMAGE_SIZE]
+                [--epochs EPOCHS] [--learning-rate LEARNING_RATE]
+                [--weight-decay WEIGHT_DECAY] [--optimizer {adam,adamw,sgd}]
+                [--scheduler {step,cosine,polynomial,none}]
+                [--step-size STEP_SIZE] [--gamma GAMMA]
+                [--loss {ce,dice,focal,combined,weighted_ce}]
+                [--checkpoint-dir CHECKPOINT_DIR]
+                [--log-interval LOG_INTERVAL]
+train.py: error: unrecognized arguments: --initial-lr 1e-4

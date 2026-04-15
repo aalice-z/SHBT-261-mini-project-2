@@ -1,0 +1,51 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; }
+      .label { font-size: 12px; }
+      .bar { stroke: #333; stroke-width: 1; }
+      .bar-good { fill: #2ecc71; }
+      .bar-poor { fill: #e74c3c; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="30" class="title" text-anchor="middle">Per-Class IoU Performance (PASCAL VOC 2007)</text>
+  
+  <!-- Background class -->
+  <rect x="50" y="60" width="1100" class="bar bar-good"/>
+  <text x="1160" y="75" class="label">Background: 74.44%</text>
+  
+  <!-- Person class -->
+  <rect x="50" y="100" width="141" class="bar bar-good"/>
+  <text x="210" y="115" class="label">Person: 12.86%</text>
+  
+  <!-- Diningtable class -->
+  <rect x="50" y="140" width="1.1" class="bar bar-poor"/>
+  <text x="70" y="155" class="label">Diningtable: 0.10%</text>
+  
+  <!-- 18 classes with 0% IoU -->
+  <rect x="50" y="180" width="0.1" class="bar bar-poor"/>
+  <text x="70" y="195" class="label">18 other classes: 0.00% IoU each</text>
+  
+  <!-- Legend and Statistics -->
+  <rect x="50" y="250" width="1100" height="500" fill="#f8f9fa" stroke="#333" stroke-width="2"/>
+  
+  <text x="70" y="280" class="title">Summary Statistics</text>
+  
+  <text x="70" y="320" class="label">Mean IoU (mIoU): 4.16%</text>
+  <text x="70" y="350" class="label">Pixel Accuracy: 74.19%</text>
+  <text x="70" y="380" class="label">Background Class: 9,810,120 pixels (74% of dataset)</text>
+  <text x="70" y="410" class="label">Person Class: 790,209 pixels (5.9% of dataset)</text>
+  <text x="70" y="440" class="label">Other 19 Classes: ~20% of dataset combined</text>
+  
+  <text x="70" y="490" class="title">Key Findings</text>
+  
+  <text x="70" y="530" class="label">✓ Model learned to detect background class (74.44% IoU)</text>
+  <text x="70" y="560" class="label">✓ Partial success with Person class (12.86% IoU)</text>
+  <text x="70" y="590" class="label">✗ Failed to learn 17 other classes (0% IoU)</text>
+  <text x="70" y="620" class="label">⚠ Dataset imbalance (74% background): Primary limitation</text>
+  <text x="70" y="650" class="label">⚠ Small object classes: Insufficient pixel representation (&lt;2% each)</text>
+  
+  <text x="70" y="700" class="label" fill="#666">Recommendation: Use class-weighted loss or focal loss to improve minority class performance</text>
+</svg>
