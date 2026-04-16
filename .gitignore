@@ -41,6 +41,9 @@ wheels/
 .installed.cfg
 *.egg
 
+# Reports & Documentation (generated)
+docs/FINAL_REPORT.md
+
 # IDE & Editor Files
 .vscode/
 .idea/
